@@ -17,6 +17,7 @@ class App extends Component {
 
     formSubmitted(e) {
         e.preventDefault();
+        console.log(this.state.newItem);
     }
 
     render() {
