@@ -30,8 +30,8 @@ class App extends Component {
         })
     }
 
-    moveItem() {
-        console.log("Clicked list item.");
+    moveItem(index) {
+        console.log(`Index ${index} clicked.`);
     }
 
     render() {
@@ -66,7 +66,7 @@ class App extends Component {
                             (item, index) => {
                                 return (
                                     <li
-                                        onClick={() => this.moveItem()}
+                                        onClick={() => this.moveItem(index)}
                                         key={`${item.title}-${index}`}
                                     >
                                         {item.title}
