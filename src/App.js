@@ -19,15 +19,20 @@ class App extends Component {
 
     formSubmitted(e) {
         e.preventDefault();
-        this.setState({
-            newItem: "",
-            itemsToBuy: [
-                ...this.state.itemsToBuy,
-                {
-                    title: this.state.newItem
-                }
-            ]
-        })
+
+        if (this.state.newItem === "") {
+            alert("Please, submit an item to add to list.");
+        } else {
+            this.setState({
+                newItem: "",
+                itemsToBuy: [
+                    ...this.state.itemsToBuy,
+                    {
+                        title: this.state.newItem
+                    }
+                ]
+            })
+        }
     }
 
     moveItem(index, direction) {
