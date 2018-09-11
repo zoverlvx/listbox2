@@ -13,7 +13,6 @@ class App extends Component {
         this.setState({
             newItem: e.target.value
         });
-        console.log(this.state.newItem);
     }
 
     render() {
@@ -21,7 +20,7 @@ class App extends Component {
             <div className="App">
                 <h1>ListBox</h1>
                 <form
-                
+                    onSubmit={(e) => this.formSubmitted(e)} 
                 >
                     <label
                         htmlFor="newItem"
