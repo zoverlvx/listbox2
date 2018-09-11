@@ -9,7 +9,11 @@ class App extends Component {
                 <form
                 
                 >
-
+                    <label
+                        htmlFor="newItem"
+                    >
+                        New Item
+                    </label>
                 </form>
             </div>
         );
