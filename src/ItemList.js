@@ -10,15 +10,15 @@ const ItemList = (props) => {
                     props.list.map(
                         (item, index) => {
                             return (
-                                <li
-                                    onClick={
-                                        () => 
-                                            props.moveItem(index, "toCart")
+                                <Item
+                                    item={item}
+                                    index={index}
+                                    moveItem={
+                                        (index, direction) => 
+                                        props.moveItem(index, direction)
                                     }
-                                    key={`${item.title}-${index}`}
-                                >
-                                    {item.title}
-                                </li>
+
+                                /> 
                             )
                         }
                     )
