@@ -30,19 +30,10 @@ class App extends Component {
         })
     }
 
-    moveItem(index) {
+    moveItem(index, direction) {
         const {itemsToBuy, itemsInCart} = this.state;
-
-        const checkList = (list) => (listItem) => {
-            return listItem.title === list[index].title;
-        }
-
-        const checkItemsToBuy = checkList(itemsToBuy);
-        const isInItemsToBuy = itemsToBuy.some(checkItemsToBuy);
-        const checkItemsInCart = checkList(itemsInCart);
-        const isInItemsCart = itemsInCart.some(checkItemsInCart);
-    
-        if(isInItemsToBuy) {
+        
+        if(direction === "toCart") {
             this.setState({
                 itemsToBuy: itemsToBuy.filter(
                     item => item.title !== itemsToBuy[index].title
@@ -50,7 +41,7 @@ class App extends Component {
                 itemsInCart: [...itemsInCart, itemsToBuy[index]]
             })
         }
-        if(isInItemsCart) {
+        if (direction === "toBuy") {
             this.setState({
                 itemsToBuy: [...itemsToBuy, itemsInCart[index]],
                 itemsInCart: itemsInCart.filter(
@@ -58,7 +49,6 @@ class App extends Component {
                 )
             })
         }
-        console.log(this.state);
     }
 
     render() {
@@ -93,7 +83,10 @@ class App extends Component {
                             (item, index) => {
                                 return (
                                     <li
-                                        onClick={() => this.moveItem(index)}
+                                        onClick={
+                                            () => 
+                                                this.moveItem(index, "toCart")
+                                        }
                                         key={`${item.title}-${index}`}
                                     >
                                         {item.title}
@@ -110,7 +103,10 @@ class App extends Component {
                             (item, index) => {
                                 return (
                                     <li
-                                        onClick={() => this.moveItem(index)}
+                                        onClick={
+                                            () => 
+                                                this.moveItem(index, "toBuy")
+                                        }
                                         key={`${item.title}-${index}}`}
                                     >
                                         {item.title}
