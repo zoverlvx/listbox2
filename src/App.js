@@ -25,6 +25,8 @@ class App extends Component {
                         Add Item
                     </button>
                 </form>
+                <h3>Items to Buy:</h3>
+                <h3>Items in Cart:</h3>
             </div>
         );
     }
