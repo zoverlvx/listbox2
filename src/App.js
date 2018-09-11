@@ -67,8 +67,12 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>ListBox</h1>
-                <NewTodoForm 
-
+                <NewTodoForm /*Compare the context of this as defined in the
+                                state component with the new changes made in the
+                                new child component which receives the state as                                 passed down as props*/
+                    newItem={this.state.newItem}
+                    formSubmitted={this.formSubmitted.bind(this)}
+                    newItemChanged={this.newItemChanged.bind(this)}
                 />                
                 <h3>Items to Buy:</h3>
                 <ul>
