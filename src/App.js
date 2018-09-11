@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+
+    newItemChanged(e) {
+        console.log(e.target.value)
+    }
+
     render() {
         return (
             <div className="App">
