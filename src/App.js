@@ -19,10 +19,15 @@ class App extends Component {
 
     formSubmitted(e) {
         e.preventDefault();
-
+        const {itemsToBuy, itemsInCart, newItem} = this.state;
+        function check(listItem) {
+            return listItem.title === newItem;
+        }
         if (this.state.newItem === "") {
             alert("Please, submit an item to add to list.");
-        } else {
+        } else if (itemsToBuy.some(check) || itemsInCart.some(check)) {
+            alert("Item is already in one of the lists. Please, choose another.");
+        } else { 
             this.setState({
                 newItem: "",
                 itemsToBuy: [
