@@ -18,6 +18,7 @@ class App extends Component {
                     <input 
                         id="newItem"
                         name="newItem"
+                        onChange={(e) => this.newItemChanged(e)}
                     />
                     <button
                         type="submit"
