@@ -72,47 +72,16 @@ class App extends Component {
                     newItem={this.state.newItem}
                     formSubmitted={this.formSubmitted.bind(this)}
                     newItemChanged={this.newItemChanged.bind(this)}
-                />                
+                />
                 <h3>Items to Buy:</h3>
-                <ul>
-                    {
-                        this.state.itemsToBuy.map(
-                            (item, index) => {
-                                return (
-                                    <li
-                                        onClick={
-                                            () => 
-                                                this.moveItem(index, "toCart")
-                                        }
-                                        key={`${item.title}-${index}`}
-                                    >
-                                        {item.title}
-                                    </li>
-                                )
-                            }
-                        )
-                    }
-                </ul>
+                <ItemList
+                    list={this.state.itemsToBuy}
+                />
+                
                 <h3>Items in Cart:</h3>
-                <ul>
-                    {
-                        this.state.itemsInCart.map(
-                            (item, index) => {
-                                return (
-                                    <li
-                                        onClick={
-                                            () => 
-                                                this.moveItem(index, "toBuy")
-                                        }
-                                        key={`${item.title}-${index}}`}
-                                    >
-                                        {item.title}
-                                    </li>
-                                )
-                            }
-                        )
-                    }
-                </ul>
+                <ItemList
+                    list={this.state.itemsInCart}
+                />
             </div>
         );
     }
