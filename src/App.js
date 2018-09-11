@@ -100,7 +100,7 @@ class App extends Component {
                             (item, index) => {
                                 return (
                                     <li
-                                        
+                                        onClick={() => this.moveItem(index)}
                                         key={`${item.title}-${index}}`}
                                     >
                                         {item.title}
