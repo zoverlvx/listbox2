@@ -33,6 +33,12 @@ class App extends Component {
     moveItem(index) {
         const {itemsToBuy} = this.state;
 
+        const checkList = (list) => (listItem) => {
+            return listItem.title === list[index].title;
+        }
+        const checkItemsToBuy = checkList(itemsToBuy);
+        const checkedItemsToBuy = itemsToBuy.some(checkItemsToBuy);
+        console.log(checkedItemsToBuy);
         console.log(`Index ${index} clicked with the value of ${itemsToBuy[index].title}.`);
     }
 
