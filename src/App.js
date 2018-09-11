@@ -55,7 +55,20 @@ class App extends Component {
                     </button>
                 </form>
                 <h3>Items to Buy:</h3>
-                <ul></ul>
+                <ul>
+                    {
+                        this.state.itemsToBuy.map(
+                            (item) => {
+                                return (
+                                    <li
+                                    >
+                                        {item.title}
+                                    </li>
+                                )
+                            }
+                        )
+                    }
+                </ul>
                 <h3>Items in Cart:</h3>
             </div>
         );
