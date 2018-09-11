@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewTodoForm from "NewTodoForm";
+import NewTodoForm from "./NewTodoForm";
 
 import './App.css';
 
@@ -67,27 +67,9 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>ListBox</h1>
-                <form
-                    onSubmit={(e) => this.formSubmitted(e)} 
-                >
-                    <label
-                        htmlFor="newItem"
-                    >
-                        New Item
-                    </label>
-                    <br />
-                    <input 
-                        id="newItem"
-                        name="newItem"
-                        onChange={(e) => this.newItemChanged(e)}
-                        value={this.state.newItem}
-                    />
-                    <button
-                        type="submit"
-                    >
-                        Add Item
-                    </button>
-                </form>
+                <NewTodoForm 
+
+                />                
                 <h3>Items to Buy:</h3>
                 <ul>
                     {
