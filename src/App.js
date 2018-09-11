@@ -14,6 +14,10 @@ class App extends Component {
                     >
                         New Item
                     </label>
+                    <input 
+                        id="newItem"
+                        name="newItem"
+                    />
                 </form>
             </div>
         );
