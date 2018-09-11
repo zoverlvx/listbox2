@@ -30,6 +30,10 @@ class App extends Component {
         })
     }
 
+    moveItem() {
+        console.log("Clicked list item.");
+    }
+
     render() {
         return (
             <div className="App">
