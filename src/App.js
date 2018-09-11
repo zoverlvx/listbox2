@@ -31,7 +31,9 @@ class App extends Component {
     }
 
     moveItem(index) {
-        console.log(`Index ${index} clicked.`);
+        const {itemsToBuy} = this.state;
+
+        console.log(`Index ${index} clicked with the value of ${itemsToBuy[index].title}.`);
     }
 
     render() {
