@@ -10,7 +10,10 @@ class App extends Component {
     }
 
     newItemChanged(e) {
-        console.log(e.target.value)
+        this.setState({
+            newItem: e.target.value
+        });
+        console.log(this.state.newItem);
     }
 
     render() {
