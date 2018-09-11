@@ -47,6 +47,7 @@ class App extends Component {
                         id="newItem"
                         name="newItem"
                         onChange={(e) => this.newItemChanged(e)}
+                        value={this.state.newItem}
                     />
                     <button
                         type="submit"
