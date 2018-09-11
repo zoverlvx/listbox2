@@ -15,6 +15,10 @@ class App extends Component {
         });
     }
 
+    formSubmitted(e) {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div className="App">
