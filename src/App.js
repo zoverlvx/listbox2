@@ -27,7 +27,6 @@ class App extends Component {
                 }
             ]
         })
-        console.log(this.state.newItem);
     }
 
     render() {
@@ -56,6 +55,7 @@ class App extends Component {
                     </button>
                 </form>
                 <h3>Items to Buy:</h3>
+                <ul></ul>
                 <h3>Items in Cart:</h3>
             </div>
         );
