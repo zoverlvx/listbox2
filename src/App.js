@@ -19,6 +19,7 @@ class App extends Component {
     formSubmitted(e) {
         e.preventDefault();
         this.setState({
+            newItem: "",
             itemsToBuy: [
                 ...this.state.itemsToBuy,
                 {
@@ -26,7 +27,7 @@ class App extends Component {
                 }
             ]
         })
-        console.log(this.state);
+        console.log(this.state.newItem);
     }
 
     render() {
