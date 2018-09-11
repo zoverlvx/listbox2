@@ -14,6 +14,7 @@ class App extends Component {
                     >
                         New Item
                     </label>
+                    <br />
                     <input 
                         id="newItem"
                         name="newItem"
