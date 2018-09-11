@@ -58,9 +58,10 @@ class App extends Component {
                 <ul>
                     {
                         this.state.itemsToBuy.map(
-                            (item) => {
+                            (item, index) => {
                                 return (
                                     <li
+                                        key={`${item.title}-${index}`}
                                     >
                                         {item.title}
                                     </li>
