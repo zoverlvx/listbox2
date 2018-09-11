@@ -31,15 +31,24 @@ class App extends Component {
     }
 
     moveItem(index) {
-        const {itemsToBuy} = this.state;
+        const {itemsToBuy, itemsInCart} = this.state;
 
         const checkList = (list) => (listItem) => {
             return listItem.title === list[index].title;
         }
+
         const checkItemsToBuy = checkList(itemsToBuy);
-        const checkedItemsToBuy = itemsToBuy.some(checkItemsToBuy);
-        console.log(checkedItemsToBuy);
-        console.log(`Index ${index} clicked with the value of ${itemsToBuy[index].title}.`);
+        const isInItemsToBuy = itemsToBuy.some(checkItemsToBuy);
+    
+        if(isInItemsToBuy) {
+            this.setState({
+                itemsToBuy: itemsToBuy.filter(
+                    item => item.title !== itemsToBuy[index].title
+                ),
+                itemsInCart: [...itemsInCart, itemsToBuy[index]]
+            })
+        }
+        console.log(this.state);
     }
 
     render() {
