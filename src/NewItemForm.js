@@ -1,12 +1,9 @@
 import React from "react";
 
-const NewTodoForm = (props) => { //<-- props passed from state component 
-                                    // to this child component
-
-// don't forget to use return like I did earlier when creating this
+const NewItemForm = (props) => { 
     return (
         <form
-            onSubmit={props.formSubmitted} //<-- props
+            onSubmit={props.formSubmitted}
         >
             <label
                 htmlFor="newItem"
@@ -17,8 +14,8 @@ const NewTodoForm = (props) => { //<-- props passed from state component
             <input 
                 id="newItem"
                 name="newItem"
-                onChange={props.newItemChanged} //<-- props
-                value={props.newItem} // <-- props
+                onChange={props.newItemChanged} 
+                value={props.newItem}
             />
             <button
                 type="submit"
@@ -30,4 +27,4 @@ const NewTodoForm = (props) => { //<-- props passed from state component
     )
 }
 
-export default NewTodoForm;
+export default NewItemForm;

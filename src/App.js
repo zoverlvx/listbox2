@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewTodoForm from "./NewTodoForm";
+import NewItemForm from "./NewItemForm";
 import ItemList from "./ItemList";
 
 import './App.css';
@@ -68,9 +68,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>ListBox</h1>
-                <NewTodoForm /*Compare the context of this as defined in the
-                                state component with the new changes made in the
-                                new child component which receives the state as                                 passed down as props*/
+                <NewItemForm 
                     newItem={this.state.newItem}
                     formSubmitted={this.formSubmitted.bind(this)}
                     newItemChanged={this.newItemChanged.bind(this)}
