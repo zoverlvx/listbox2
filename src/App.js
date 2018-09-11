@@ -39,13 +39,23 @@ class App extends Component {
 
         const checkItemsToBuy = checkList(itemsToBuy);
         const isInItemsToBuy = itemsToBuy.some(checkItemsToBuy);
+        const checkItemsInCart = checkList(itemsInCart);
+        const isInItemsCart = itemsInCart.some(checkItemsInCart);
     
         if(isInItemsToBuy) {
             this.setState({
-                itemsToBuy: itemsToBuy.filter(
+                itemsToBuy: [...itemsToBuy.filter(
                     item => item.title !== itemsToBuy[index].title
-                ),
+                )],
                 itemsInCart: [...itemsInCart, itemsToBuy[index]]
+            })
+        }
+        if(isInItemsCart) {
+            this.setState({
+                itemsToBuy: [...itemsToBuy, itemsInCart[index]],
+                itemsInCart: itemsInCart.filter(
+                    item => item.title !== itemsInCart[index].title
+                )
             })
         }
         console.log(this.state);
