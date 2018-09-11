@@ -18,7 +18,15 @@ class App extends Component {
 
     formSubmitted(e) {
         e.preventDefault();
-        console.log(this.state.newItem);
+        this.setState({
+            itemsToBuy: [
+                ...this.state.itemsToBuy,
+                {
+                    title: this.state.newItem
+                }
+            ]
+        })
+        console.log(this.state);
     }
 
     render() {
