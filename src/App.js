@@ -44,9 +44,9 @@ class App extends Component {
     
         if(isInItemsToBuy) {
             this.setState({
-                itemsToBuy: [...itemsToBuy.filter(
+                itemsToBuy: itemsToBuy.filter(
                     item => item.title !== itemsToBuy[index].title
-                )],
+                ),
                 itemsInCart: [...itemsInCart, itemsToBuy[index]]
             })
         }
