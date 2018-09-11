@@ -18,6 +18,11 @@ class App extends Component {
                         id="newItem"
                         name="newItem"
                     />
+                    <button
+                        type="submit"
+                    >
+                        Add Item
+                    </button>
                 </form>
             </div>
         );
