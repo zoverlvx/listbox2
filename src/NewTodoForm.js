@@ -1,8 +1,12 @@
 import React from "react";
 
 const NewTodoForm = () => {
-    <form
-        onSubmit={(e) => this.formSubmitted(e)} 
+    <form /*The handlers and attributes which use the state and its methods
+            will be marked on this component in the parent component (App).
+            The state's data and its method will then be passed as an argument
+             of props into this component.*/
+        onSubmit={(e) => this.formSubmitted(e)} //<-- this will be passed 
+                                                        //from state down
     >
         <label
             htmlFor="newItem"
@@ -13,8 +17,8 @@ const NewTodoForm = () => {
         <input 
             id="newItem"
             name="newItem"
-            onChange={(e) => this.newItemChanged(e)}
-            value={this.state.newItem}
+            onChange={(e) => this.newItemChanged(e)} //<-- and this one
+            value={this.state.newItem} // <-- and this one
         />
         <button
             type="submit"
