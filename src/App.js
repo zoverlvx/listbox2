@@ -94,6 +94,22 @@ class App extends Component {
                     }
                 </ul>
                 <h3>Items in Cart:</h3>
+                <ul>
+                    {
+                        this.state.itemsInCart.map(
+                            (item, index) => {
+                                return (
+                                    <li
+                                        
+                                        key={`${item.title}-${index}}`}
+                                    >
+                                        {item.title}
+                                    </li>
+                                )
+                            }
+                        )
+                    }
+                </ul>
             </div>
         );
     }
