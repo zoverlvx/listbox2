@@ -43,7 +43,7 @@ class App extends Component {
         }
     }
 
-    moveItem(index, direction) {
+    moveItem = (direction) => (index) => {
         const {itemsToBuy, itemsInCart} = this.state;
         
         if(direction === "toCart") {
@@ -76,11 +76,13 @@ class App extends Component {
                 <h3>Items to Buy:</h3>
                 <ItemList
                     list={this.state.itemsToBuy}
+                    moveItem={this.moveItem("toCart")}
                 />
                 
                 <h3>Items in Cart:</h3>
                 <ItemList
                     list={this.state.itemsInCart}
+                    moveItem={this.moveItem("toBuy")}
                 />
             </div>
         );

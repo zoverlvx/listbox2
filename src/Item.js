@@ -4,8 +4,7 @@ const Item = (props) => {
     const {item, index} = props;
     return (
         <li
-            onClick={(direction) => props.moveItem(index, direction)}
-            key={`${item.title}-${index}`}
+            onClick={() => props.moveItem(index)}
         >
             {item.title}
         </li>
